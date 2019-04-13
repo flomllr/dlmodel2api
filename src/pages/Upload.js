@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { TextArea, Button, Icon, FileInput } from '@blueprintjs/core';
+import { TextArea, Button, Icon, FileInput, Classes } from '@blueprintjs/core';
 import AddParameter from '../components/AddParameter';
 import { IconNames } from '@blueprintjs/icons';
 import './Upload.css';
@@ -10,7 +10,7 @@ class Upload extends Component {
 		inputs: [{ name: 'image', type: 'url' }],
 		outputs: [{ name: 'labels', type: 'string' }],
 		description: '',
-		fileSelected: 'Select file',
+		fileSelected: 'Select model',
 		hasSelection: undefined
 	};
 
@@ -49,14 +49,16 @@ class Upload extends Component {
 			hasSelection
 		} = this.state;
 		return (
-			<div>
-				<h2>Upload your DL Model</h2>
+			<div className='upload'>
+				<h2>Upload a new model</h2>
 				<FileInput
 					text={fileSelected}
 					onInputChange={this.uploadFile}
 					hasSelection={hasSelection}
+					className='uploadBtn'
 				/>
-				<p>Define the input parameters of your model:</p>
+				<h3>Define inputs and outputs</h3>
+				<p>Inputs</p>
 				{inputs.map((e, id) => (
 					<div key={id}>
 						<p className='paramDesc'>
@@ -71,7 +73,7 @@ class Upload extends Component {
 				))}
 				<AddParameter inputtype='inputs' addParam={this.addParam} />
 
-				<p>Define the outputs of your model</p>
+				<p>Outputs</p>
 				{outputs.map((e, id) => (
 					<div key={id}>
 						<p className='paramDesc'>
@@ -85,8 +87,22 @@ class Upload extends Component {
 					</div>
 				))}
 				<AddParameter inputtype='outputs' addParam={this.addParam} />
-				<p>Add some description of your model. You may use markdown.</p>
-				<TextArea fill onChange={this.changeDescription} value={description} />
+
+				<h3>Give a short description</h3>
+				<p>Name</p>
+				<input
+					type='text'
+					className={Classes.INPUT}
+					name='inputs'
+					placeholder='Choose a name (optional)'
+				/>
+				<p>Description</p>
+				<TextArea
+					fill
+					onChange={this.changeDescription}
+					value={description}
+					placeholder='Insert a description of your model'
+				/>
 				<p>Preview</p>
 				<ReactMarkdown source={description} />
 				<Button>Deploy</Button>

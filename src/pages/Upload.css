@@ -5,3 +5,35 @@
 .paramDesc {
 	display: inline;
 }
+
+.upload h2 {
+	font-weight: 300;
+	text-align: center;
+}
+
+.uploadBtn .bp3-file-upload-input:after {
+	color: #339999;
+	background: transparent;
+	border: 1px solid #339999;
+	box-shadow: none;
+	font-weight: bold;
+	height: 50px;
+	width: auto;
+	line-height: 50px;
+	padding: 0 50px;
+	margin: 0;
+}
+
+.uploadBtn .bp3-file-upload-input:hover:after {
+	box-shadow: none;
+}
+
+.uploadBtn .bp3-file-upload-input {
+	height: 50px;
+	line-height: 50px;
+	box-shadow: none;
+}
+
+.uploadBtn input {
+	line-height: 50px;
+}

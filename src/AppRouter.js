@@ -4,6 +4,7 @@ import App from './pages/App';
 import Overview from './pages/Overview';
 import SearchResult from './pages/SearchResult';
 import Upload from './pages/Upload';
+import './AppRouter.css';
 
 function AppRouter() {
 	return (
@@ -26,10 +27,12 @@ function AppRouter() {
 					</ul>
 				</nav>
 
-				<Route path='/' exact component={App} />
-				<Route path='/overview/' component={Overview} />
-				<Route path='/search/' component={SearchResult} />
-				<Route path='/upload/' component={Upload} />
+				<div className='main-container'>
+					<Route path='/' exact component={App} />
+					<Route path='/overview/' component={Overview} />
+					<Route path='/search/' component={SearchResult} />
+					<Route path='/upload/' component={Upload} />
+				</div>
 			</div>
 		</Router>
 	);
