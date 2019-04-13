@@ -1,13 +1,29 @@
 .removeIcon {
-	transform: rotate(45deg);
+	transform: rotate(45deg) translate3D(7px, -7px, 0);
+}
+
+.upload {
+	padding-bottom: 100px;
 }
 
 .paramDesc {
 	display: inline;
+	line-height: 25px;
 }
 
 .upload h2 {
 	font-weight: 300;
+	text-align: center;
+}
+
+.uploadBtn {
+	margin: 30px auto 50px auto;
+	display: inline-block;
+	text-align: left;
+}
+
+.text-center {
+	width: 100%;
 	text-align: center;
 }
 
@@ -31,9 +47,45 @@
 .uploadBtn .bp3-file-upload-input {
 	height: 50px;
 	line-height: 50px;
-	box-shadow: none;
 }
 
 .uploadBtn input {
 	line-height: 50px;
+}
+
+.inputGrid {
+	display: grid;
+	grid-template-columns: 100px 1fr;
+}
+
+.margin30 {
+	margin: 30px 0;
+}
+
+.margin10 {
+	margin: 10px 0;
+}
+
+.tab {
+	padding-left: 30px;
+}
+
+.slightBold {
+	font-weight: 600;
+}
+
+.addField {
+	margin: 10px 0;
+}
+
+.markdownPreview {
+	background-color: #f7f7f7;
+	padding: 50px;
+}
+
+button.deployButton {
+	background-color: #329999 !important;
+	padding: 15px 0;
+	color: #fff !important;
+	font-weight: bold;
 }

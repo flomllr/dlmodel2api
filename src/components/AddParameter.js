@@ -1,6 +1,7 @@
 import React from 'react';
 import { HTMLSelect, Icon, Classes } from '@blueprintjs/core';
 import { IconNames } from '@blueprintjs/icons';
+import './AddParameter.css';
 
 const AddParameter = ({ inputtype, addParam }) => {
 	const addInput = e => {
@@ -18,7 +19,7 @@ const AddParameter = ({ inputtype, addParam }) => {
 		{ label: 'string', value: 'string' }
 	];
 	return (
-		<div>
+		<div className='addField'>
 			<input
 				type='text'
 				className={Classes.INPUT}
@@ -30,8 +31,9 @@ const AddParameter = ({ inputtype, addParam }) => {
 				options={typeOptions}
 				className='typeInput'
 				id={inputtype + 'type'}
+				minimal
 			/>
-			<Icon icon={IconNames.ADD} onClick={addInput} />
+			<Icon icon={IconNames.ADD} onClick={addInput} className='plusButton' />
 		</div>
 	);
 };
