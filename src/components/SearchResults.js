@@ -9,7 +9,7 @@ import {
 	H5,
 	H6
 } from '@blueprintjs/core';
-import './SearchResult.css';
+import './SearchResults.css';
 
 const finePrintStyle = {
 	color: 'gray',
@@ -37,8 +37,6 @@ const cardCol3 = {
 	textAlign: 'right',
 	width: '20%'
 };
-
-const mockSearchResults = {};
 
 class SearchResultCard extends Component {
 	cardOptions = {
@@ -82,7 +80,7 @@ class SearchResultCard extends Component {
 	}
 }
 
-class SearchResult extends Component {
+class SearchResults extends Component {
 	render() {
 		const { mockData } = this.props;
 
@@ -98,4 +96,4 @@ class SearchResult extends Component {
 	}
 }
 
-export default SearchResult;
+export default SearchResults;
