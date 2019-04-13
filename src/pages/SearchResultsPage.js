@@ -1,5 +1,6 @@
 import SearchResults from '../components/SearchResults';
 import React, { Component } from 'react';
+import './SearchResultsPage.css';
 
 class SearchResultsPage extends Component {
 	render() {
@@ -7,7 +8,7 @@ class SearchResultsPage extends Component {
 			{
 				title: 'Facial-Expression-Recognition.Pytorch',
 				description:
-					'A CNN based pytorch implementation on facial expression recognition (FER2013 and CK+), achieving 73.112% (state-of-the-art) in FER2013 and 94.64% in CK+ dataset',
+					'A CNN based facial expression recognition, returning labels and respective emojis. Achieving 73.112% (state-of-the-art) in FER2013 and 94.64% in CK+ dataset.',
 				updated: '7 months ago',
 				pricing: '$0.10',
 				tags: ['facial expression', 'emotion', 'face detection'],
@@ -31,7 +32,7 @@ class SearchResultsPage extends Component {
 				updated: '6 months ago',
 				pricing: '$2',
 				tags: ['facial expression', 'emotion', 'face detection'],
-				calls: '51041',
+				calls: '5101',
 				upvotes: '2341'
 			},
 			{
@@ -47,9 +48,8 @@ class SearchResultsPage extends Component {
 
 		console.log(searchMockData);
 		return (
-			<div>
-				<br />
-				<h2>Showing models related to <span>facial recognition</span></h2>
+			<div className='searchPage'>
+				<h2>Showing models related to facial recognition</h2>
 				<SearchResults mockData={searchMockData} />
 			</div>
 		);

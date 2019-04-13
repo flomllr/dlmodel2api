@@ -54,9 +54,9 @@ class Overview extends Component {
 	state = {
 		modelName: 'Facial-Expression-Recognition',
 		url: 'https://api.deeplify.ai/Facial-Expression-Recognition/v1',
-		abstract: `A CNN based pytorch implementation on facial expression recognition (FER2013 and CK+), achieving 73.112% (state-of-the-art) in FER2013 and 94.64% in CK+ dataset`,
+		abstract: `A CNN based facial expression recognition, returning labels and respective emojis. Achieving 73.112% (state-of-the-art) in FER2013 and 94.64% in CK+ dataset.`,
 		inputs: [{ name: 'image', type: 'image' }],
-		outputs: [{ name: 'labels', type: 'string' }],
+		outputs: [{ name: 'expressions', type: 'Array<{expression: number}>' }],
 		description: '',
 		autoFocus: true,
 		canEscapeKeyClose: true,

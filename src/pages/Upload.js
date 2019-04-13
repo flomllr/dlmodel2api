@@ -129,9 +129,10 @@ class Upload extends Component {
 					<h3>Price per 1000 API requests</h3>
 					<Slider
 						fill
-						min={1}
-						max={1000}
-						labelStepSize={100}
+						min={0.1}
+						max={5.1}
+						stepSize={0.01}
+						labelStepSize={1}
 						value={price}
 						onChange={this.changePrice}
 					/>
