@@ -10,7 +10,12 @@ class Header extends Component {
 		return <div>
       <nav class="bp3-navbar bp3-dark">
         <div class="bp3-navbar-group bp3-align-left">
-          <div class="bp3-navbar-heading">Title</div>
+          <Link to='/overview/' style={{ textDecoration: 'none', color: 'inherit' }}>
+            <button class="bp3-button bp3-minimal title-link">
+              <div class="bp3-navbar-heading">Title</div>
+            </button>
+          </Link>
+
           <input class="bp3-input header-search-box" placeholder="Search models..." type="text" />
         </div>
 
