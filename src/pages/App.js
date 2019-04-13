@@ -8,7 +8,7 @@ class App extends Component {
 		return (
 			<div className='front'>
 				<h1>
-					An efficient way to find pretrained Deep Learning models and access
+					An efficient way to find pre-trained Deep Learning models and access
 					them directly via API
 				</h1>
 				<p>
