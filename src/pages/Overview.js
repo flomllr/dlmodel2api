@@ -12,7 +12,8 @@ class Overview extends Component {
 		abstract: `A CNN based pytorch implementation on facial expression recognition (FER2013 and CK+), achieving 73.112% (state-of-the-art) in FER2013 and 94.64% in CK+ dataset`,
 		inputs: [{ name: 'image', type: 'image' }],
 		outputs: [{ name: 'labels', type: 'string' }],
-		description: 'A CNN based pytorch implementation on facial expression recognition (FER2013 and CK+), achieving 73.112% (state-of-the-art) in FER2013 and 94.64% in CK+ dataset. '
+		description:
+			'A CNN based pytorch implementation on facial expression recognition (FER2013 and CK+), achieving 73.112% (state-of-the-art) in FER2013 and 94.64% in CK+ dataset. '
 	};
 	render() {
 		const { title, description, inputs, outputs, url, abstract } = this.state;

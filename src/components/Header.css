@@ -1,12 +1,22 @@
 .header-search-box {
-  /* TODO: THIS NEEDS TO SHRINK */
-  width: 400px;
+	/* TODO: THIS NEEDS TO SHRINK */
+	width: 400px;
 }
 
 .title-link {
-  margin: 0 5px;
+	margin: 0 5px;
 }
 
+.logoHeadline {
+	color: #fff;
+	font-size: 17px;
+	font-weight: normal;
+}
+
+.logoHeadline:before {
+	height: 5px;
+	top: 14px;
+}
 /*
 .navbar-align-center {
   margin-left: 100px;

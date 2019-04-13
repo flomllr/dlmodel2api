@@ -26,7 +26,7 @@ class Header extends Component {
 						<Link to='/' style={{ textDecoration: 'none', color: 'inherit' }}>
 							<button class='bp3-button bp3-minimal title-link'>
 								<div class='bp3-navbar-heading'>
-									Deep<b>Hub</b>
+									<h2 className='logoHeadline'>deeplify</h2>
 								</div>
 							</button>
 						</Link>
