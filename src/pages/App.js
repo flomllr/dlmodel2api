@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SearchResults from './SearchResult';
+import SearchResults from '../components/SearchResults';
 import { Button, Card, Elevation } from '@blueprintjs/core';
 import './App.css';
 
