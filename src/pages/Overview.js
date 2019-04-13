@@ -3,13 +3,9 @@ import markdown from '../assets/desc.md';
 import {
 	Button,
 	Classes,
-	Code,
 	Dialog,
 	H4,
-	H5,
 	Intent,
-	Switch,
-	Tooltip,
 	FileInput,
 	Spinner
 } from '@blueprintjs/core';
@@ -56,8 +52,8 @@ class PreTest extends Component {
 
 class Overview extends Component {
 	state = {
-		modelName: 'Facial-Expression-Recognition.Pytorch',
-		url: 'https://api.deephub.ai/Facial-Expression-Recognition.Pytorch/v1',
+		modelName: 'Facial-Expression-Recognition',
+		url: 'https://api.deephub.ai/Facial-Expression-Recognition/v1',
 		abstract: `A CNN based pytorch implementation on facial expression recognition (FER2013 and CK+), achieving 73.112% (state-of-the-art) in FER2013 and 94.64% in CK+ dataset`,
 		inputs: [{ name: 'image', type: 'image' }],
 		outputs: [{ name: 'labels', type: 'string' }],
@@ -92,20 +88,20 @@ class Overview extends Component {
 		} = this.state;
 
 		let dialogContent;
-		if (this.state.testStage == 0) {
+		if (this.state.testStage === 0) {
 			dialogContent = (
 				<PreTest testButton={this.testButton} modelName={modelName} />
 			);
-		} else if (this.state.testStage == 1) {
+		} else if (this.state.testStage === 1) {
 			dialogContent = (
 				<Spinner className='testSpinner' intent='none' size='70' />
 			);
 			setTimeout(() => {
-				if (this.state.testStage == 1) {
+				if (this.state.testStage === 1) {
 					this.setState({ testStage: 2 });
 				}
 			}, 1000);
-		} else if (this.state.testStage == 2) {
+		} else if (this.state.testStage === 2) {
 			dialogContent = <p>Results</p>;
 		}
 
