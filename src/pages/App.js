@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SearchResults from './SearchResult';
+import SearchResults from '../components/SearchResults';
 import './App.css';
 
 class App extends Component {
@@ -14,7 +14,6 @@ class App extends Component {
 				tags: ['audio', 'speech', 'text', 'NLP'],
 				calls: '5123',
 				upvotes: '1341'
-
 			},
 			{
 				title: 'video-classification-3d-cnn-pytorch',

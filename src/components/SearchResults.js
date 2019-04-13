@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card, H4 } from '@blueprintjs/core';
-import './SearchResult.css';
+import './SearchResults.css';
 import img1 from '../assets/usage.png';
 import img2 from '../assets/usage2.png';
 import img3 from '../assets/usage3.png';
