@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import { Card, H4 } from '@blueprintjs/core';
 import './SearchResult.css';
+import img1 from '../assets/usage.png';
+import img2 from '../assets/usage2.png';
+import img3 from '../assets/usage3.png';
+import img4 from '../assets/usage4.png';
+
+const images = [img1, img2, img3, img4];
 
 const cardStyles = {
 	margin: '30px 0',
@@ -24,6 +30,10 @@ const cardCol3 = {
 	width: '20%'
 };
 
+const imgStyle = {
+	width: '50%'
+};
+
 class SearchResultCard extends Component {
 	cardOptions = {
 		elevation: 1,
@@ -31,7 +41,7 @@ class SearchResultCard extends Component {
 	};
 
 	render() {
-		const { resultData } = this.props;
+		const { resultData, index } = this.props;
 		const cardTitle = resultData['title'];
 		const cardDesc = resultData['description'];
 		const cardTags = resultData['tags'];
@@ -45,7 +55,6 @@ class SearchResultCard extends Component {
 					<div style={cardCol1}>
 						<H4 className='cardTitle'>{cardTitle}</H4>
 						<p>{cardDesc}</p>
-						{/*<p style={finePrintStyle}>More sample sample sample sample text</p>*/}
 						<div className='tagList'>
 							<React.Fragment>
 								{cardTags.map(tag => (
@@ -55,12 +64,18 @@ class SearchResultCard extends Component {
 						</div>
 					</div>
 
-					<div style={cardCol2}>Image</div>
+					<div style={cardCol2} />
 
 					<div style={cardCol3}>
 						<button class='bp3-button bp3-minimal bp3-icon-trending-up'>
 							{cardCallsCount}
 						</button>
+						<img
+							style={imgStyle}
+							className='max100'
+							src={images[index]}
+							alt={'usage' + index}
+						/>
 					</div>
 				</Card>
 			</a>
@@ -74,8 +89,8 @@ class SearchResult extends Component {
 
 		return (
 			<React.Fragment>
-				{mockData.map(e => (
-					<SearchResultCard resultData={e} />
+				{mockData.map((e, index) => (
+					<SearchResultCard resultData={e} index={index} />
 				))}
 			</React.Fragment>
 		);
