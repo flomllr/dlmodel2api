@@ -56,8 +56,8 @@ class PreTest extends Component {
 
 class Overview extends Component {
 	state = {
-		modelName: 'Facial-Expression-Recognition.Pytorch',
-		url: 'https://api.deephub.ai/Facial-Expression-Recognition.Pytorch/v1',
+		modelName: 'Facial-Expression-Recognition',
+		url: 'https://api.deephub.ai/Facial-Expression-Recognition/v1',
 		abstract: `A CNN based pytorch implementation on facial expression recognition (FER2013 and CK+), achieving 73.112% (state-of-the-art) in FER2013 and 94.64% in CK+ dataset`,
 		inputs: [{ name: 'image', type: 'image' }],
 		outputs: [{ name: 'labels', type: 'string' }],
