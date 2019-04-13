@@ -1,25 +1,107 @@
 import React, { Component } from 'react';
-import { Button } from '@blueprintjs/core';
+
+import {
+	Button,
+	Classes,
+	Code,
+	Dialog,
+	H4,
+	H5,
+	Intent,
+	Switch,
+	Tooltip,
+	FileInput,
+	Spinner
+} from '@blueprintjs/core';
 import './Overview.css';
 import img from '../assets/usage.png';
 import Voting from '../components/Voting';
 import ReactMarkdown from 'react-markdown';
 
+class PreTest extends Component {
+	render() {
+		const { testButton, modelName } = this.props;
+
+		return (
+			<div>
+				<div className={Classes.DIALOG_BODY}>
+					<H4>
+						<div style={{ margin: '0 auto 20px auto' }}>{modelName}</div>
+					</H4>
+					<p>Inputs:</p>
+
+					<FileInput
+						text='Upload picture'
+						onInputChange={this.uploadFile}
+						hasSelection='undefined'
+						className='uploadBtn'
+						style={{ margin: '10px auto 50px auto' }}
+						fill
+					/>
+					<p>Expected outputs:</p>
+				</div>
+				<div className='bp3-dialog-footer'>
+					<Button
+						intent={Intent.SUCCESS}
+						className='testButton bp3-large'
+						onClick={testButton}
+					>
+						Perform test!
+					</Button>
+				</div>
+			</div>
+		);
+	}
+}
+
 class Overview extends Component {
 	state = {
-		title: 'Facial-Expression-Recognition.Pytorch',
+		modelName: 'Facial-Expression-Recognition.Pytorch',
 		url: 'https://api.deephub.ai/Facial-Expression-Recognition.Pytorch/v1',
 		abstract: `A CNN based pytorch implementation on facial expression recognition (FER2013 and CK+), achieving 73.112% (state-of-the-art) in FER2013 and 94.64% in CK+ dataset`,
 		inputs: [{ name: 'image', type: 'image' }],
 		outputs: [{ name: 'labels', type: 'string' }],
 		description:
-			'A CNN based pytorch implementation on facial expression recognition (FER2013 and CK+), achieving 73.112% (state-of-the-art) in FER2013 and 94.64% in CK+ dataset. '
+			'A CNN based implementation on facial expression recognition (FER2013 and CK+), achieving 73.112% (state-of-the-art) in FER2013 and 94.64% in CK+ dataset.',
+		autoFocus: true,
+		canEscapeKeyClose: true,
+		canOutsideClickClose: true,
+		enforceFocus: true,
+		isOpen: false,
+		usePortal: true,
+		testStage: 0
 	};
 	render() {
-		const { title, description, inputs, outputs, url, abstract } = this.state;
+		const {
+			modelName,
+			description,
+			inputs,
+			outputs,
+			url,
+			abstract
+		} = this.state;
+
+		let dialogContent;
+		if (this.state.testStage == 0) {
+			dialogContent = (
+				<PreTest testButton={this.testButton} modelName={modelName} />
+			);
+		} else if (this.state.testStage == 1) {
+			dialogContent = (
+				<Spinner className='testSpinner' intent='none' size='70' />
+			);
+			setTimeout(() => {
+				if (this.state.testStage == 1) {
+					this.setState({ testStage: 2 });
+				}
+			}, 1000);
+		} else if (this.state.testStage == 2) {
+			dialogContent = <p>Results</p>;
+		}
+
 		return (
 			<div className='overview'>
-				<h2>{title}</h2>
+				<h2>{modelName}</h2>
 				<h3>API Endpoint</h3>
 				<p className='APIendpoint'>{url}</p>
 				<div className='overviewGrid'>
@@ -65,7 +147,7 @@ class Overview extends Component {
 						</div>
 					</div>
 					<div className='right'>
-						<Button className='deployButton' minimal>
+						<Button className='deployButton' onClick={this.handleOpen} minimal>
 							Test the API
 						</Button>
 						<div className='bg-lightgrey'>
@@ -97,9 +179,24 @@ class Overview extends Component {
 				<div className='bg-lightgrey'>
 					<ReactMarkdown source={description} />
 				</div>
+
+				<div>
+					<Dialog
+						icon='wrench'
+						onClose={this.handleClose}
+						title='Test run the model'
+						{...this.state}
+					>
+						{dialogContent}
+					</Dialog>
+				</div>
 			</div>
 		);
 	}
+
+	testButton = () => this.setState({ testStage: 1 });
+	handleOpen = () => this.setState({ isOpen: true, testStage: 0 });
+	handleClose = () => this.setState({ isOpen: false });
 }
 
 export default Overview;
