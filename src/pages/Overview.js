@@ -34,7 +34,6 @@ class PreTest extends Component {
 						style={{ margin: '10px auto 50px auto' }}
 						fill
 					/>
-					<p>Expected outputs:</p>
 				</div>
 				<div className='bp3-dialog-footer'>
 					<Button
@@ -102,7 +101,59 @@ class Overview extends Component {
 				}
 			}, 1000);
 		} else if (this.state.testStage === 2) {
-			dialogContent = <p>Results</p>;
+			dialogContent = (
+				<div className='testResult'>
+					{'{'}
+					<div className='tab'>
+						<div>
+							<p className='paramDesc'>
+								<span className='code'>
+									<span className='slightBold'>expressions</span>: {'['}
+									<div className='tab'>
+										{'{'}
+										<p className='paramDesc'>
+											<span className='slightBold'>Angry</span>: 1
+										</p>
+										{'}'},<br />
+										{'{'}
+										<p className='paramDesc'>
+											<span className='slightBold'>Disgust</span>: 0
+										</p>
+										{'}'},<br />
+										{'{'}
+										<p className='paramDesc'>
+											<span className='slightBold'>Fear</span>: 0
+										</p>
+										{'}'},<br />
+										{'{'}
+										<p className='paramDesc'>
+											<span className='slightBold'>Happy</span>: 0
+										</p>
+										{'}'},<br />
+										{'{'}
+										<p className='paramDesc'>
+											<span className='slightBold'>Sad</span>: 0
+										</p>
+										{'}'},<br />
+										{'{'}
+										<p className='paramDesc'>
+											<span className='slightBold'>Surprise</span>: 0
+										</p>
+										{'}'},<br />
+										{'{'}
+										<p className='paramDesc'>
+											<span className='slightBold'>Neutral</span>: 0
+										</p>
+										{'}'},<br />
+									</div>
+									{']'}
+								</span>
+							</p>
+						</div>
+					</div>
+					{'}'}
+				</div>
+			);
 		}
 
 		return (

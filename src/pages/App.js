@@ -22,7 +22,7 @@ class App extends Component {
 				updated: '6 months ago',
 				pricing: '$2',
 				tags: ['video', 'classification', 'action'],
-				calls: '5123',
+				calls: '3826',
 				upvotes: '1341'
 			},
 			{
@@ -32,7 +32,7 @@ class App extends Component {
 				updated: 'a month ago',
 				pricing: '$1',
 				tags: ['classification', 'images', 'single-shot', 'multibox'],
-				calls: '5123',
+				calls: '1732',
 				upvotes: '1341'
 			},
 			{
@@ -42,7 +42,7 @@ class App extends Component {
 				updated: '18 days ago',
 				pricing: '$1',
 				tags: ['classification', 'images'],
-				calls: '5123',
+				calls: '1389',
 				upvotes: '1341'
 			}
 		];
