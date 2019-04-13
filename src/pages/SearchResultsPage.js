@@ -1,5 +1,6 @@
 import SearchResults from '../components/SearchResults';
 import React, { Component } from 'react';
+import './SearchResultsPage.css';
 
 class SearchResultsPage extends Component {
 	render() {
@@ -47,8 +48,7 @@ class SearchResultsPage extends Component {
 
 		console.log(searchMockData);
 		return (
-			<div>
-				<br />
+			<div className='searchPage'>
 				<h2>Showing models related to facial recognition</h2>
 				<SearchResults mockData={searchMockData} />
 			</div>
