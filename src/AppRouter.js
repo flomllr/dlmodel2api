@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import App from './pages/App';
 import Overview from './pages/Overview';
 import SearchResult from './pages/SearchResult';
@@ -10,9 +10,9 @@ import './AppRouter.css';
 
 const mockData = [
 	{
-		title: 'Facial-Expression-Recognition.Pytorch',
+		title: 'Facial-Expression-Recognition',
 		description:
-			'A CNN based pytorch implementation on facial expression recognition (FER2013 and CK+), achieving 73.112% (state-of-the-art) in FER2013 and 94.64% in CK+ dataset',
+			'A CNN based implementation on facial expression recognition (FER2013 and CK+), achieving 73.112% (state-of-the-art) in FER2013 and 94.64% in CK+ dataset',
 		updated: '7 months ago',
 		tags: ['facial expression, emotion, face detection'],
 		calls: '3.1M'

@@ -3,13 +3,9 @@ import markdown from '../assets/desc.md';
 import {
 	Button,
 	Classes,
-	Code,
 	Dialog,
 	H4,
-	H5,
 	Intent,
-	Switch,
-	Tooltip,
 	FileInput,
 	Spinner
 } from '@blueprintjs/core';
@@ -92,20 +88,20 @@ class Overview extends Component {
 		} = this.state;
 
 		let dialogContent;
-		if (this.state.testStage == 0) {
+		if (this.state.testStage === 0) {
 			dialogContent = (
 				<PreTest testButton={this.testButton} modelName={modelName} />
 			);
-		} else if (this.state.testStage == 1) {
+		} else if (this.state.testStage === 1) {
 			dialogContent = (
 				<Spinner className='testSpinner' intent='none' size='70' />
 			);
 			setTimeout(() => {
-				if (this.state.testStage == 1) {
+				if (this.state.testStage === 1) {
 					this.setState({ testStage: 2 });
 				}
 			}, 1000);
-		} else if (this.state.testStage == 2) {
+		} else if (this.state.testStage === 2) {
 			dialogContent = <p>Results</p>;
 		}
 

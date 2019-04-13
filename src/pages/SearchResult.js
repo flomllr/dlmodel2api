@@ -1,20 +1,6 @@
 import React, { Component } from 'react';
-import {
-	Button,
-	Card,
-	Classes,
-	Elevation,
-	Icon,
-	H4,
-	H5,
-	H6
-} from '@blueprintjs/core';
+import { Card, H4 } from '@blueprintjs/core';
 import './SearchResult.css';
-
-const finePrintStyle = {
-	color: 'gray',
-	fontSize: '0.9em'
-};
 
 const cardStyles = {
 	margin: '30px 0',
@@ -37,8 +23,6 @@ const cardCol3 = {
 	textAlign: 'right',
 	width: '20%'
 };
-
-const mockSearchResults = {};
 
 class SearchResultCard extends Component {
 	cardOptions = {
@@ -73,11 +57,13 @@ class SearchResultCard extends Component {
 
 					<div style={cardCol2}>Image</div>
 
-				<div style={cardCol3}>
-					<button class='bp3-button bp3-minimal bp3-icon-trending-up'>{cardCallsCount}</button>
-				</div>
-			</Card>
-    </a>
+					<div style={cardCol3}>
+						<button class='bp3-button bp3-minimal bp3-icon-trending-up'>
+							{cardCallsCount}
+						</button>
+					</div>
+				</Card>
+			</a>
 		);
 	}
 }
@@ -85,8 +71,6 @@ class SearchResultCard extends Component {
 class SearchResult extends Component {
 	render() {
 		const { mockData } = this.props;
-
-		const resultsData = [];
 
 		return (
 			<React.Fragment>
