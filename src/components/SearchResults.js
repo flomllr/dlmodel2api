@@ -20,6 +20,7 @@ const cardCol1 = {
 };
 
 const cardCol2 = {
+	paddingTop: '4px',
 	textAlign: 'right',
 	fontSize: '1.1em',
 	width: '20%'
@@ -46,6 +47,7 @@ class SearchResultCard extends Component {
 		const cardDesc = resultData['description'];
 		const cardTags = resultData['tags'];
 		const cardCallsCount = resultData['calls'];
+		const cardPricing = resultData['pricing'];
 
 		console.log(cardTags);
 
@@ -64,7 +66,12 @@ class SearchResultCard extends Component {
 						</div>
 					</div>
 
-					<div style={cardCol2} />
+					<div style={cardCol2}>
+						{cardPricing}
+						<div className="lightText">
+							/1000 calls
+						</div>
+					</div>
 
 					<div style={cardCol3}>
 						<button class='bp3-button bp3-minimal bp3-icon-trending-up'>

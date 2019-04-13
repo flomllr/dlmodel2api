@@ -31,3 +31,10 @@
 .infoCard {
 	padding: 32px 40px !important;
 }
+
+
+.lightText {
+	margin-top: 5px;
+	font-size: 0.8em;
+	color: rgb(156, 207, 169);
+}
