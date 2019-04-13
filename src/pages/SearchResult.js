@@ -8,7 +8,7 @@ const finePrintStyle = {
 }
 
 const cardStyles = {
-	margin: "30px 200px",
+	margin: "30px 0",
 	display: "flex",
 	alignItems: "flex-start",
 	flexWrap: "nowrap"
@@ -66,8 +66,7 @@ class SearchResultCard extends Component {
 			</div>
 
 			<div style={cardCol3}>
-				<Icon icon="star" iconSize={14}/>
-				<span> 1000</span>
+				<button class="bp3-button bp3-minimal bp3-icon-star">1999</button>
 			</div>
 
 		</Card>

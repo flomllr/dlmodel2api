@@ -4,28 +4,15 @@ import App from './pages/App';
 import Overview from './pages/Overview';
 import SearchResult from './pages/SearchResult';
 import Upload from './pages/Upload';
+import Header from './components/Header';
+
 import './AppRouter.css';
 
 function AppRouter() {
 	return (
 		<Router>
 			<div>
-				<nav>
-					<ul>
-						<li>
-							<Link to='/'>Home</Link>
-						</li>
-						<li>
-							<Link to='/overview/'>Overview</Link>
-						</li>
-						<li>
-							<Link to='/search/'>Searchresult</Link>
-						</li>
-						<li>
-							<Link to='/upload/'>Upload</Link>
-						</li>
-					</ul>
-				</nav>
+				<Header></Header>
 
 				<div className='main-container'>
 					<Route path='/' exact component={App} />
