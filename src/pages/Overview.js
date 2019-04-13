@@ -53,7 +53,7 @@ class PreTest extends Component {
 class Overview extends Component {
 	state = {
 		modelName: 'Facial-Expression-Recognition',
-		url: 'https://api.deeplify.ai/Facial-Expression-Recognition/v1',
+		url: 'https://api.deeplify.ai/facial-expression-recognition/v1',
 		abstract: `A CNN based facial expression recognition, returning labels and respective emojis. Achieving 73.112% (state-of-the-art) in FER2013 and 94.64% in CK+ dataset.`,
 		inputs: [{ name: 'image', type: 'image' }],
 		outputs: [{ name: 'expressions', type: 'Array<{expression: number}>' }],
