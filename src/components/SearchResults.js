@@ -83,7 +83,7 @@ class SearchResultCard extends Component {
 	}
 }
 
-class SearchResult extends Component {
+class SearchResults extends Component {
 	render() {
 		const { mockData } = this.props;
 
@@ -97,4 +97,4 @@ class SearchResult extends Component {
 	}
 }
 
-export default SearchResult;
+export default SearchResults;
