@@ -6,7 +6,7 @@ class SearchResultsPage extends Component {
 	render() {
 		const searchMockData = [
 			{
-				title: 'Facial-Expression-Recognition.Pytorch',
+				title: 'Facial-Expression-Recognition',
 				description:
 					'A CNN based facial expression recognition, returning labels and respective emojis. Achieving 73.112% (state-of-the-art) in FER2013 and 94.64% in CK+ dataset.',
 				updated: '7 months ago',
@@ -16,7 +16,7 @@ class SearchResultsPage extends Component {
 				upvotes: '1341'
 			},
 			{
-				title: 'Facial-Expression-Recognition',
+				title: 'Tenosorflow Facial-Expression-Recognition',
 				description:
 					'Facial-Expression-Recognition in TensorFlow. Detecting faces in video and recognizing the expression(emotion).',
 				updated: '9 months ago',

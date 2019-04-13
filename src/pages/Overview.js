@@ -165,7 +165,7 @@ class Overview extends Component {
 								<img src={img} alt='usage' />
 							</div>
 							<h3>Pricing</h3>
-							<h4 className='margin10top'>$1 / 1000 calls</h4>
+							<h4 className='margin10top'>$0.1 / 1000 calls</h4>
 							<h3>Creator</h3>
 							<p>
 								Jan Mittendorf
