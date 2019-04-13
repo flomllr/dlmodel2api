@@ -7,12 +7,12 @@ import ReactMarkdown from 'react-markdown';
 
 class Overview extends Component {
 	state = {
-		title: 'Custom Speech To Text',
-		url: 'https://api.deephub.ai/custom-speech-to-text/v1',
-		abstract: `DeepSpeech is an open source Speech-To-Text engine, using a model trained by machine learning techniques based on Baidu's Deep Speech research paper. Project DeepSpeech uses Google's TensorFlow to make the implementation easier.`,
-		inputs: [{ name: 'image', type: 'url' }],
+		title: 'Facial-Expression-Recognition.Pytorch',
+		url: 'https://api.deephub.ai/Facial-Expression-Recognition.Pytorch/v1',
+		abstract: `A CNN based pytorch implementation on facial expression recognition (FER2013 and CK+), achieving 73.112% (state-of-the-art) in FER2013 and 94.64% in CK+ dataset`,
+		inputs: [{ name: 'image', type: 'image' }],
 		outputs: [{ name: 'labels', type: 'string' }],
-		description: '# This is the long description'
+		description: 'A CNN based pytorch implementation on facial expression recognition (FER2013 and CK+), achieving 73.112% (state-of-the-art) in FER2013 and 94.64% in CK+ dataset. '
 	};
 	render() {
 		const { title, description, inputs, outputs, url, abstract } = this.state;
