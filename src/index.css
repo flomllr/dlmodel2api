@@ -6,6 +6,9 @@ body {
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	--accentcolor: #7ebc9c;
+	--accentlight: #7edeada6;
+	--accentdark: #394b59;
 }
 
 code {
@@ -16,4 +19,8 @@ code {
 .code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 		monospace;
+}
+
+button:focus {
+	outline: none;
 }

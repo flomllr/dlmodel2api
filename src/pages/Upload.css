@@ -3,7 +3,7 @@
 }
 
 .upload {
-	padding-bottom: 100px;
+	padding: 60px 0 100px 0;
 }
 
 .paramDesc {
@@ -12,13 +12,27 @@
 }
 
 .upload h2 {
-	font-weight: 300;
-	text-align: center;
+	font-size: 25px;
+	color: #2b2b2b;
+	margin-bottom: 0px;
+	position: relative;
+}
+
+.upload h2:before {
+	content: '';
+	display: block;
+	position: absolute;
+	background-color: var(--accentlight);
+	width: 236px;
+	height: 11px;
+	top: 21px;
+	z-index: -1;
+	border-radius: 4px;
 }
 
 .uploadBtn {
 	margin: 30px auto 50px auto;
-	display: inline-block;
+	display: block;
 	text-align: left;
 }
 
@@ -28,9 +42,9 @@
 }
 
 .uploadBtn .bp3-file-upload-input:after {
-	color: #339999;
+	color: var(--accentcolor);
 	background: transparent;
-	border: 1px solid #339999;
+	border: 1px solid var(--accentcolor);
 	box-shadow: none;
 	font-weight: bold;
 	height: 50px;
@@ -84,8 +98,16 @@
 }
 
 button.deployButton {
-	background-color: #329999 !important;
+	background-color: var(--accentcolor) !important;
 	padding: 15px 0;
 	color: #fff !important;
 	font-weight: bold;
+}
+
+.bp3-slider-label:before {
+	content: '$';
+}
+
+.priceSelect {
+	margin: 50px 0 80px 0;
 }

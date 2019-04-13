@@ -1,14 +1,24 @@
 import React, { Component } from 'react';
+import SearchResults from './SearchResult';
 import { Button, Card, Elevation } from '@blueprintjs/core';
+import './App.css';
 
 class App extends Component {
 	render() {
 		return (
-			<Card interactive={true} elevation={Elevation.TWO}>
-				<h5>Card heading</h5>
-				<p>Card content</p>
-				<Button>Submit</Button>
-			</Card>
+			<div className='front'>
+				<h1>
+					An efficient way to find pretrained Deep Learning models and access
+					them directly via API
+				</h1>
+				<p>
+					search for specific criteria - upload your own pretrained model -
+					browse through the most popular selection
+				</p>
+				<hr className='hrSmall' />
+				<h2>Trending</h2>
+				<SearchResults />
+			</div>
 		);
 	}
 }

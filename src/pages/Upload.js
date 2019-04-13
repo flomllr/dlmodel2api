@@ -6,7 +6,8 @@ import {
 	Icon,
 	FileInput,
 	Classes,
-	Intent
+	Intent,
+	Slider
 } from '@blueprintjs/core';
 import AddParameter from '../components/AddParameter';
 import { IconNames } from '@blueprintjs/icons';
@@ -18,7 +19,8 @@ class Upload extends Component {
 		outputs: [{ name: 'labels', type: 'string' }],
 		description: '',
 		fileSelected: 'Select model',
-		hasSelection: undefined
+		hasSelection: undefined,
+		price: 1
 	};
 
 	changeDescription = e => {
@@ -47,25 +49,29 @@ class Upload extends Component {
 		this.setState({ fileSelected, hasSelection: true });
 	};
 
+	changePrice = value => {
+		this.setState({ price: value });
+	};
+
 	render() {
 		const {
 			inputs,
 			outputs,
 			description,
 			fileSelected,
-			hasSelection
+			hasSelection,
+			price
 		} = this.state;
 		return (
 			<div className='upload'>
 				<h2>Upload a new model</h2>
-				<div className='text-center'>
-					<FileInput
-						text={fileSelected}
-						onInputChange={this.uploadFile}
-						hasSelection={hasSelection}
-						className='uploadBtn'
-					/>
-				</div>
+				<FileInput
+					text={fileSelected}
+					onInputChange={this.uploadFile}
+					hasSelection={hasSelection}
+					className='uploadBtn'
+					fill
+				/>
 				<h3>Define inputs and outputs</h3>
 				<div className='inputGrid margin30'>
 					<p>Inputs</p>
@@ -119,6 +125,18 @@ class Upload extends Component {
 					</div>
 				</div>
 
+				<div className='priceSelect'>
+					<h3>Price per 1000 API requests</h3>
+					<Slider
+						fill
+						min={1}
+						max={1000}
+						labelStepSize={100}
+						value={price}
+						onChange={this.changePrice}
+					/>
+				</div>
+
 				<h3>Give a short description</h3>
 				<div className='inputGrid margin10'>
 					<p>Name</p>
@@ -144,9 +162,11 @@ class Upload extends Component {
 					className='markdownPreview margin30'
 					source={description}
 				/>
-				<Button fill minimal className='deployButton'>
-					Deploy
-				</Button>
+				<a href='/overview'>
+					<Button fill minimal className='deployButton'>
+						Deploy
+					</Button>
+				</a>
 			</div>
 		);
 	}

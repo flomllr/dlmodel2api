@@ -1,0 +1,39 @@
+@import '~normalize.css';
+@import '~@blueprintjs/core/lib/css/blueprint.css';
+@import '~@blueprintjs/icons/lib/css/blueprint-icons.css';
+
+.front {
+	padding: 80px 0;
+}
+
+.front h1 {
+	font-weight: 300;
+	text-align: center;
+}
+
+.front p {
+	margin-top: 30px;
+}
+.hrSmall {
+	width: 300px;
+	margin: 20px auto 100px auto;
+}
+
+.front h2 {
+	font-size: 25px;
+	color: #2b2b2b;
+	margin-bottom: 0px;
+	position: relative;
+}
+
+.front h2:before {
+	content: '';
+	display: block;
+	position: absolute;
+	background-color: var(--accentlight);
+	width: 114px;
+	height: 11px;
+	top: 21px;
+	z-index: -1;
+	border-radius: 4px;
+}
