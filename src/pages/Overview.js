@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import markdown from '../assets/desc.md';
 import {
 	Button,
 	Classes,
@@ -46,7 +46,7 @@ class PreTest extends Component {
 						className='testButton bp3-large'
 						onClick={testButton}
 					>
-						Perform test!
+						Perform test
 					</Button>
 				</div>
 			</div>
@@ -61,8 +61,7 @@ class Overview extends Component {
 		abstract: `A CNN based pytorch implementation on facial expression recognition (FER2013 and CK+), achieving 73.112% (state-of-the-art) in FER2013 and 94.64% in CK+ dataset`,
 		inputs: [{ name: 'image', type: 'image' }],
 		outputs: [{ name: 'labels', type: 'string' }],
-		description:
-			'A CNN based implementation on facial expression recognition (FER2013 and CK+), achieving 73.112% (state-of-the-art) in FER2013 and 94.64% in CK+ dataset.',
+		description: '',
 		autoFocus: true,
 		canEscapeKeyClose: true,
 		canOutsideClickClose: true,
@@ -70,6 +69,17 @@ class Overview extends Component {
 		isOpen: false,
 		usePortal: true,
 		testStage: 0
+	};
+	componentDidMount = () => {
+		fetch(markdown)
+			.then(response => {
+				return response.text();
+			})
+			.then(text => {
+				this.setState({
+					description: text
+				});
+			});
 	};
 	render() {
 		const {
@@ -176,8 +186,8 @@ class Overview extends Component {
 					</div>
 				</div>
 				<h3>Description</h3>
-				<div className='bg-lightgrey'>
-					<ReactMarkdown source={description} />
+				<div className='bg-lightgrey posRelative'>
+					<ReactMarkdown className='max100' source={description} />
 				</div>
 
 				<div>
