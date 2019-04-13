@@ -8,14 +8,14 @@ import ReactMarkdown from 'react-markdown';
 
 class PreTest extends Component {
 	render() {
-		const {testButton} = this.props;
+		const {testButton, modelName} = this.props;
 
 		return(
 			<div>
 				<div className={Classes.DIALOG_BODY}>
 					<H4>
 						<div style={{margin: "0 auto 20px auto"}}>
-							Model Name
+							{modelName}
 						</div>
 					</H4>
 					<p>
@@ -51,7 +51,7 @@ class PreTest extends Component {
 
 class Overview extends Component {
 	state = {
-		title: 'Facial-Expression-Recognition.Pytorch',
+		modelName: 'Facial-Expression-Recognition.Pytorch',
 		url: 'https://api.deephub.ai/Facial-Expression-Recognition.Pytorch/v1',
 		abstract: `A CNN based pytorch implementation on facial expression recognition (FER2013 and CK+), achieving 73.112% (state-of-the-art) in FER2013 and 94.64% in CK+ dataset`,
 		inputs: [{ name: 'image', type: 'image' }],
@@ -66,11 +66,11 @@ class Overview extends Component {
     testStage: 0
   };
 	render() {
-		const { title, description, inputs, outputs, url, abstract } = this.state;
-    
+		const { modelName, description, inputs, outputs, url, abstract } = this.state;
+
     let dialogContent;
     if (this.state.testStage == 0) {
-      dialogContent = <PreTest testButton={this.testButton}></PreTest>
+      dialogContent = <PreTest testButton={this.testButton} modelName={modelName}></PreTest>
     }else if (this.state.testStage == 1) {
       dialogContent = <Spinner className="testSpinner" intent="none" size="70" />
       setTimeout(() => {
@@ -80,10 +80,10 @@ class Overview extends Component {
     }else if (this.state.testStage == 2) {
       dialogContent = <p>Results</p>
     }
-    
+
 		return (
 			<div className='overview'>
-				<h2>{title}</h2>
+				<h2>{modelName}</h2>
 				<h3>API Endpoint</h3>
 				<p className='APIendpoint'>{url}</p>
 				<div className='overviewGrid'>
@@ -129,7 +129,7 @@ class Overview extends Component {
 						</div>
 					</div>
 					<div className='right'>
-						<Button className='deployButton' minimal>
+						<Button className='deployButton' onClick={this.handleOpen} minimal>
 							Test the API
 						</Button>
 						<div className='bg-lightgrey'>
@@ -177,10 +177,9 @@ class Overview extends Component {
 			</div>
 		);
 	}
-  
-  
+
+
   testButton = () => this.setState({testStage: 1});
-  // testButton = () =>
   handleOpen = () => this.setState({ isOpen: true , testStage: 0});
   handleClose = () => this.setState({ isOpen: false });
 }
