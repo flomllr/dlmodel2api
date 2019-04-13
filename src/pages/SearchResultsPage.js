@@ -32,7 +32,7 @@ class SearchResultsPage extends Component {
 				updated: '6 months ago',
 				pricing: '$2/1000 calls',
 				tags: ['facial expression', 'emotion', 'face detection'],
-				calls: '51041',
+				calls: '5101',
 				upvotes: '2341'
 			},
 			{
