@@ -1,11 +1,23 @@
 import React, { Component } from 'react';
-
-import { Link } from 'react-router-dom';
-
+import { Link, Redirect } from 'react-router-dom';
 import './Header.css';
 
 class Header extends Component {
 	state = {};
+
+	componentDidMount = () => {
+		document.querySelector('#searchInput').addEventListener('keyup', event => {
+			event.preventDefault();
+			if (event.keyCode === 13) {
+				this.search();
+			}
+		});
+	};
+
+	search = () => {
+		window.location.href = '/search';
+	};
+
 	render() {
 		return (
 			<div>
@@ -13,14 +25,18 @@ class Header extends Component {
 					<div class='bp3-navbar-group bp3-align-left'>
 						<Link to='/' style={{ textDecoration: 'none', color: 'inherit' }}>
 							<button class='bp3-button bp3-minimal title-link'>
-								<div class='bp3-navbar-heading'>Title</div>
+								<div class='bp3-navbar-heading'>
+									Deep<b>Hub</b>
+								</div>
 							</button>
 						</Link>
 
 						<input
+							id='searchInput'
 							class='bp3-input header-search-box'
 							placeholder='Search models...'
 							type='text'
+							onSubmit={this.search}
 						/>
 					</div>
 
