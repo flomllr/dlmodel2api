@@ -8,7 +8,7 @@ class SearchResultsPage extends Component {
 			{
 				title: 'Facial-Expression-Recognition.Pytorch',
 				description:
-					'A CNN based pytorch implementation on facial expression recognition (FER2013 and CK+), achieving 73.112% (state-of-the-art) in FER2013 and 94.64% in CK+ dataset',
+					'A CNN based facial expression recognition, returning labels and respective emojis. Achieving 73.112% (state-of-the-art) in FER2013 and 94.64% in CK+ dataset.',
 				updated: '7 months ago',
 				pricing: '$0.10/1000 calls',
 				tags: ['facial expression', 'emotion', 'face detection'],
