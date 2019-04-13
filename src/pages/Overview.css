@@ -1,3 +1,4 @@
+
 .bp3-dialog-body {
   padding: 20px;
 }
@@ -18,4 +19,105 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+  
+.overview {
+	padding: 80px 0 50px 0;
+}
+
+.overview > h3 {
+	margin-top: 30px;
+}
+
+.overviewGrid {
+	display: grid;
+	grid-template-columns: 1fr 250px;
+	grid-gap: 40px;
+}
+
+.bg-lightgrey {
+	background-color: var(--lightgrey);
+	padding: 30px;
+}
+
+.overview .right h3 {
+	font-size: 14px;
+	color: #a2a2a2;
+	margin-top: 30px;
+	margin-bottom: 0;
+}
+
+.overview .right h3:first-child,
+.overview .main h3:first-child {
+	margin-top: 0;
+}
+
+.overview .right h4 {
+	font-size: 14px;
+	color: #252525;
+	margin: 0;
+}
+
+.overview .right img {
+	max-width: 100%;
+}
+
+.inline {
+	display: inline;
+}
+
+.overview .grid {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-gap: 20px;
+	align-items: end;
+}
+
+.overview .deployButton {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.up,
+.down {
+	cursor: pointer;
+}
+
+.voting h4 {
+	padding-right: 10px;
+}
+
+.voting {
+	margin-top: 10px;
+}
+
+.overview .main h3 {
+	margin: 40px 0 10px 0;
+}
+
+.APIendpoint {
+	font-size: 24px;
+	margin-bottom: 40px;
+	padding-left: 53px;
+	position: relative;
+	color: var(--accentdark);
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.APIendpoint:before {
+	content: 'POST';
+	background-color: var(--accentlight);
+	color: #fff;
+	margin-right: 10px;
+	padding: 9px;
+	font-size: 10px;
+	border-radius: 4px;
+	font-weight: bold;
+	position: absolute;
+	left: 0;
+}
+
+.margin10top {
+	padding-top: 10px;
 }

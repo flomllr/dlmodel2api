@@ -148,12 +148,16 @@ class Upload extends Component {
 					/>
 				</div>
 				<div className='inputGrid margin10'>
+					<p>Abstract</p>
+					<TextArea fill placeholder='Insert a brief abstract of your model' />
+				</div>
+				<div className='inputGrid margin10'>
 					<p>Description</p>
 					<TextArea
 						fill
 						onChange={this.changeDescription}
 						value={description}
-						placeholder='Insert a description of your model'
+						placeholder='Insert a description of your model. (You may use markdown.)'
 					/>
 				</div>
 

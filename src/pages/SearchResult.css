@@ -12,12 +12,14 @@
 	color: #fff;
 }
 
-.cardTitle {
+.cardTitle,
+.cardLink {
 	color: #000;
 	transition: all 150ms ease;
 }
 
-.cardTitle:hover {
+.cardTitle:hover,
+.cardLink:hover {
 	text-decoration: none;
 	color: unset;
 }
