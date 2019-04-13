@@ -9,6 +9,7 @@ body {
 	--accentcolor: #7ebc9c;
 	--accentlight: #7edeada6;
 	--accentdark: #394b59;
+	--lightgrey: #f7f7f7;
 }
 
 code {
@@ -21,6 +22,6 @@ code {
 		monospace;
 }
 
-button:focus {
+*:not(input):focus {
 	outline: none;
 }

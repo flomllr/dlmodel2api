@@ -93,7 +93,7 @@
 }
 
 .markdownPreview {
-	background-color: #f7f7f7;
+	background-color: var(--lightgrey);
 	padding: 50px;
 }
 
@@ -110,4 +110,8 @@ button.deployButton {
 
 .priceSelect {
 	margin: 50px 0 80px 0;
+}
+
+.bp3-slider-progress.bp3-intent-primary {
+	background-color: var(--accentcolor);
 }
