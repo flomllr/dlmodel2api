@@ -80,7 +80,7 @@ class SearchResultCard extends Component {
 				<div style={cardCol2}>Image</div>
 
 				<div style={cardCol3}>
-					<button class='bp3-button bp3-minimal bp3-icon-star'>1999</button>
+					<button class='bp3-button bp3-minimal bp3-icon-trending-up'>{cardCallsCount}</button>
 				</div>
 			</Card>
 		);

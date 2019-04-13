@@ -1,0 +1,21 @@
+.bp3-dialog-body {
+  padding: 20px;
+}
+
+.bp3-dialog {
+  height: 400px;
+}
+
+.testButton {
+  margin: 20px;
+}
+
+.testSpinner {
+  margin-top: 140px;
+}
+
+.bp3-dialog-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
