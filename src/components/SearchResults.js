@@ -1,20 +1,12 @@
 import React, { Component } from 'react';
-import {
-	Button,
-	Card,
-	Classes,
-	Elevation,
-	Icon,
-	H4,
-	H5,
-	H6
-} from '@blueprintjs/core';
+import { Card, H4 } from '@blueprintjs/core';
 import './SearchResults.css';
+import img1 from '../assets/usage.png';
+import img2 from '../assets/usage2.png';
+import img3 from '../assets/usage3.png';
+import img4 from '../assets/usage4.png';
 
-const finePrintStyle = {
-	color: 'gray',
-	fontSize: '0.9em'
-};
+const images = [img1, img2, img3, img4];
 
 const cardStyles = {
 	margin: '30px 0',
@@ -28,6 +20,7 @@ const cardCol1 = {
 };
 
 const cardCol2 = {
+	paddingTop: '4px',
 	textAlign: 'right',
 	fontSize: '1.1em',
 	width: '20%'
@@ -38,6 +31,10 @@ const cardCol3 = {
 	width: '20%'
 };
 
+const imgStyle = {
+	width: '50%'
+};
+
 class SearchResultCard extends Component {
 	cardOptions = {
 		elevation: 1,
@@ -45,11 +42,12 @@ class SearchResultCard extends Component {
 	};
 
 	render() {
-		const { resultData } = this.props;
+		const { resultData, index } = this.props;
 		const cardTitle = resultData['title'];
 		const cardDesc = resultData['description'];
 		const cardTags = resultData['tags'];
 		const cardCallsCount = resultData['calls'];
+		const cardPricing = resultData['pricing'];
 
 		console.log(cardTags);
 
@@ -59,7 +57,6 @@ class SearchResultCard extends Component {
 					<div style={cardCol1}>
 						<H4 className='cardTitle'>{cardTitle}</H4>
 						<p>{cardDesc}</p>
-						{/*<p style={finePrintStyle}>More sample sample sample sample text</p>*/}
 						<div className='tagList'>
 							<React.Fragment>
 								{cardTags.map(tag => (
@@ -69,13 +66,26 @@ class SearchResultCard extends Component {
 						</div>
 					</div>
 
-					<div style={cardCol2}>Image</div>
+					<div style={cardCol2}>
+						{cardPricing}
+						<div className="lightText">
+							/1000 calls
+						</div>
+					</div>
 
-				<div style={cardCol3}>
-					<button class='bp3-button bp3-minimal bp3-icon-trending-up'>{cardCallsCount}</button>
-				</div>
-			</Card>
-    </a>
+					<div style={cardCol3}>
+						<button class='bp3-button bp3-minimal bp3-icon-trending-up'>
+							{cardCallsCount}
+						</button>
+						<img
+							style={imgStyle}
+							className='max100'
+							src={images[index]}
+							alt={'usage' + index}
+						/>
+					</div>
+				</Card>
+			</a>
 		);
 	}
 }
@@ -84,12 +94,10 @@ class SearchResults extends Component {
 	render() {
 		const { mockData } = this.props;
 
-		const resultsData = [];
-
 		return (
 			<React.Fragment>
-				{mockData.map(e => (
-					<SearchResultCard resultData={e} />
+				{mockData.map((e, index) => (
+					<SearchResultCard resultData={e} index={index} />
 				))}
 			</React.Fragment>
 		);

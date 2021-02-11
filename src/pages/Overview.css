@@ -129,3 +129,7 @@
 .posRelative {
 	position: relative;
 }
+
+.testResult {
+	padding: 20px;
+}

@@ -15,8 +15,10 @@ const AddParameter = ({ inputtype, addParam }) => {
 	};
 	const typeOptions = [
 		{ label: 'image', value: 'image' },
-		{ label: 'integer', value: 'integer' },
-		{ label: 'string', value: 'string' }
+		{ label: 'text', value: 'text' },
+		{ label: 'audio', value: 'audio' },
+		{ label: 'video', value: 'video' },
+		{ label: 'time series', value: 'time series' }
 	];
 	return (
 		<div className='addField'>

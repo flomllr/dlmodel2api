@@ -3,13 +3,9 @@ import markdown from '../assets/desc.md';
 import {
 	Button,
 	Classes,
-	Code,
 	Dialog,
 	H4,
-	H5,
 	Intent,
-	Switch,
-	Tooltip,
 	FileInput,
 	Spinner
 } from '@blueprintjs/core';
@@ -38,7 +34,6 @@ class PreTest extends Component {
 						style={{ margin: '10px auto 50px auto' }}
 						fill
 					/>
-					<p>Expected outputs:</p>
 				</div>
 				<div className='bp3-dialog-footer'>
 					<Button
@@ -56,11 +51,11 @@ class PreTest extends Component {
 
 class Overview extends Component {
 	state = {
-		modelName: 'Facial-Expression-Recognition.Pytorch',
-		url: 'https://api.deephub.ai/Facial-Expression-Recognition.Pytorch/v1',
-		abstract: `A CNN based pytorch implementation on facial expression recognition (FER2013 and CK+), achieving 73.112% (state-of-the-art) in FER2013 and 94.64% in CK+ dataset`,
+		modelName: 'Facial-Expression-Recognition',
+		url: 'https://api.deeplify.ai/facial-expression-recognition/v1',
+		abstract: `A CNN based facial expression recognition, returning labels and respective emojis. Achieving 73.112% (state-of-the-art) in FER2013 and 94.64% in CK+ dataset.`,
 		inputs: [{ name: 'image', type: 'image' }],
-		outputs: [{ name: 'labels', type: 'string' }],
+		outputs: [{ name: 'expressions', type: 'Array<{expression: number}>' }],
 		description: '',
 		autoFocus: true,
 		canEscapeKeyClose: true,
@@ -92,21 +87,73 @@ class Overview extends Component {
 		} = this.state;
 
 		let dialogContent;
-		if (this.state.testStage == 0) {
+		if (this.state.testStage === 0) {
 			dialogContent = (
 				<PreTest testButton={this.testButton} modelName={modelName} />
 			);
-		} else if (this.state.testStage == 1) {
+		} else if (this.state.testStage === 1) {
 			dialogContent = (
 				<Spinner className='testSpinner' intent='none' size='70' />
 			);
 			setTimeout(() => {
-				if (this.state.testStage == 1) {
+				if (this.state.testStage === 1) {
 					this.setState({ testStage: 2 });
 				}
 			}, 1000);
-		} else if (this.state.testStage == 2) {
-			dialogContent = <p>Results</p>;
+		} else if (this.state.testStage === 2) {
+			dialogContent = (
+				<div className='testResult'>
+					{'{'}
+					<div className='tab'>
+						<div>
+							<p className='paramDesc'>
+								<span className='code'>
+									<span className='slightBold'>expressions</span>: {'['}
+									<div className='tab'>
+										{'{'}
+										<p className='paramDesc'>
+											<span className='slightBold'>Angry</span>: 1
+										</p>
+										{'}'},<br />
+										{'{'}
+										<p className='paramDesc'>
+											<span className='slightBold'>Disgust</span>: 0
+										</p>
+										{'}'},<br />
+										{'{'}
+										<p className='paramDesc'>
+											<span className='slightBold'>Fear</span>: 0
+										</p>
+										{'}'},<br />
+										{'{'}
+										<p className='paramDesc'>
+											<span className='slightBold'>Happy</span>: 0
+										</p>
+										{'}'},<br />
+										{'{'}
+										<p className='paramDesc'>
+											<span className='slightBold'>Sad</span>: 0
+										</p>
+										{'}'},<br />
+										{'{'}
+										<p className='paramDesc'>
+											<span className='slightBold'>Surprise</span>: 0
+										</p>
+										{'}'},<br />
+										{'{'}
+										<p className='paramDesc'>
+											<span className='slightBold'>Neutral</span>: 0
+										</p>
+										{'}'},<br />
+									</div>
+									{']'}
+								</span>
+							</p>
+						</div>
+					</div>
+					{'}'}
+				</div>
+			);
 		}
 
 		return (
@@ -169,7 +216,7 @@ class Overview extends Component {
 								<img src={img} alt='usage' />
 							</div>
 							<h3>Pricing</h3>
-							<h4 className='margin10top'>$1 / 1000 calls</h4>
+							<h4 className='margin10top'>$0.1 / 1000 calls</h4>
 							<h3>Creator</h3>
 							<p>
 								Jan Mittendorf
